@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Music Player Level2</title>
+</head>
+<body>
+    <!-- Main container of the music player -->
+<div class="music-player">
+    <!-- Music Track list(left side) -->
+    <section class="left-section">
+        <!-- WSA logo container -->
+        <div class="wsa-logo-container">
+            <img src="./logo/wsa-logo.svg" alt="WSA logo" />           
+        </div>
+    <!-- Song list container  -->
+    <div class="song-list-container">
+        <h2>Track List</h2>
+        <div id="song-List">
+            <!-- we will add songs later  -->
+        </div>
+    </div>
+    </section>
+
+    <!-- Player with control section  -->
+     <!-- Main container for player section  -->
+    <section class="player-container">
+     <!-- thumbnail container  -->
+      <div class="thumbnail-container" id="thumbnail-container">
+        <img src="" alt="thumbnail" id="thumbnail"/>
+      </div>
+      <!-- Track details  -->
+       <div class="track-details">
+           <p id="player-title"> <!--to be added dynamically --></p>
+           <p id="player-description"><!--to be added dynamically --></p>
+       </div>
+         <!-- CONTROLS  -->
+      <div class="controls">
+          <!-- TRACK PROGRESS  -->
+           <div class="track-progress">
+              <input 
+              type="range" 
+              id="progress" 
+              min="0" max="100" 
+              value="0" step="1"
+              />
+              <div class="time" id="current-time">00:00</div>
+              <div class="time" id="time-left">00:00</div>
+           </div>
+      <!-- 3 button controls in the button group  -->
+           <div class="btn-group">
+              <button class="shuffle" id="shuffle">
+                 <img src="./icons/shuffle-highlighted.svg" id="shuffle-img"/>
+              </button>
+              <button class="next-prev-btn" id="prev">
+                  <img src="./icons/prev.svg"/>
+              </button>
+              <button  id="play-pause">
+                  <img src="./icons\play-button.svg" />
+              </button>
+              <button  class="next-prev-btn"  id="next">
+                  <img src="./icons/next.svg" />
+              </button>
+              <button  id="repeat">
+                 <img src="./icons/loop.svg" id="loop-img"/>
+              </button>
+           </div>
+         <!--      Player BOTTOM Control Having Volume and PlaybackSpeed container      -->
+           <div class="player-bottom-controls">
+                 <!-- Volume Container  -->
+             <div class="volume-container">
+                <img src="./icons/volume-low.svg"/>
+                <input 
+                    type="range" 
+                    id="volume" 
+                    class="volume-range" 
+                    min="0" max="1" 
+                    value="1" step="0.1"
+                  />
+                <img src="./icons/volume-high.svg"/>
+              </div>
+              <!-- Playback speed container  -->
+              <div class="custom-dropdown-container" id="custom-dropdown">
+                  <div class="custom-dropdown-selected" id="selectedValue">
+                     <img  src="./icons/headphone.svg" alt="headphone" />
+                      Playback Speed
+                     <img  src="./icons/arrow.svg" id="dropdown-arrow"/>
+                  </div>
+                  <!-- all speeds  -->
+                  <div class="custom-dropdown-items" id="dropdown-list-items">
+                    <div class="custom-dropdown-item" data-value="2">2x</div>
+                    <div class="custom-dropdown-item" data-value="1.5">1.5x</div>
+                    <div class="custom-dropdown-item"data-value="1.25">1.25x</div>
+                    <div class="custom-dropdown-item selected-speed" data-value="1">Normal</div>
+                  </div>
+              </div>
+           </div>    
+      </div>
+    </section>
+  </div>
+  <!-- PREVIEW MODEL -->
+   <div id="preview-model" class="model">
+      <div class="model-content">
+          <div class="model-image-container">
+               <span class="close" id="close-model">
+                 <img src="./icons/close.svg"/>
+               </span>
+                <img src="" id="preview-image" alt="preview image"/>
+                <p class="verified-badge" id="verified">
+                  <img src="./icons/verified.svg" />Verified Artist
+                </p>
+                <p id="preview-artist">Artist</p>
+            </div>
+            <div id="previewDetails">
+                 <div class="preview-stats">
+                     <h1 id="follow-count"></h1>
+                     <p>Followers</p>
+                     <h1 id="listener-count"></h1>
+                      <p>Monthly Listener</p>
+                  </div>
+                  <p id="preview-description"></p>
+            </div>
+       </div>
+   </div>
+  <script src="script.js"></script>
+ </body>
+</html>

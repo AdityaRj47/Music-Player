@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 35px;
+    box-sizing: border-box;
+}
+p{
+    margin: 0px;
+}
+button{
+    outline: none;
+    border: none;
+}
+ input[type="range"]{          /* new property */
+    accent-color: #CE036A;
+}
+.music-player{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    width: 100%;
+    height: max-content;
+}
+.left-section{
+    background-color: #F3F3F3;
+    border-radius: 21px;
+    flex-grow: 1;
+    padding: 40px;
+    flex-direction: column;
+    row-gap: 60px;
+}
+.wsa-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* song list  -->refer to script.js*/
+.item-container{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    padding: 6px;
+}
+.item-img{
+    flex-grow: 0 ;
+    display: flex;
+}
+.track-data-container{
+    flex-grow: 1;
+}
+.track-title,.track-duration{
+    color: #333333;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+}
+.track-artist,.track-year{
+    color: #4F4F4F;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+.track-year{
+    font-weight: 500;
+}
+
+.player-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #F3F3F3;
+    border-radius: 21px;
+    box-sizing: border-box;
+}
+.thumbnail-container{
+    border-radius: 21px;
+    width: 600px;
+    height: 589px;
+   background: linear-gradient(0deg,#D9D9D9 0%,#D9D9D9 100%),#fff;
+}
+.track-details{
+    margin-top: 30px;
+    text-align: center;
+    row-gap:5px;
+}
+#player-title,#player-description{
+    color:#333333;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 600;
+    line-height:110.5%;
+}
+#player-description{
+    color: #4F4F4F;
+    font-weight: 400;
+}
+#thumbnail{
+    width: 100%;
+    height: 100%;
+}
+.controls{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ width: 100%;
+}
+.track-progress{
+    position: relative;
+    width: 396px;
+   margin-bottom: 48px;
+}
+#progress{
+  position: absolute;
+  top: 16px;
+}
+.time{
+    color: #828282;
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    line-height:110.5%;
+}
+
+#time-left{
+     position: absolute;
+     top: 0;
+     right: 0;
+}
+input[type="range"]{
+  width: 100%;
+  margin: 8px 0;
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.control-btn{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#play-pause{
+   margin: 0 50px;
+}
+.volume-container{
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+.volume-range{
+ width: 321.37px !important; /*it makes sure that this style has to be applied nomatter any other */
+}
+
+.current-song{
+    color: #CE036A;
+}
+
+/* Level 2  */
+.btn-group > button {
+    cursor: pointer;
+}
+.next-prev-btn{
+  padding-top: 16px;
+}
+
+.player-bottom-controls{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.custom-dropdown-container{
+      position: relative;
+      display: inline-block;
+      width: 178px;
+}
+.custom-dropdown-selected{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50px;
+    align-items: center;
+    background-color: #ECE4F9;
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+}
+.custom-dropdown-items{
+    background-color: white;
+    position: absolute;
+    border-radius: 4px;
+   z-index: 1;
+   bottom: 62px;
+   width: 100%;
+   display: none;
+}
+.custom-dropdown-item{
+    cursor: pointer;
+    color: #000;
+    padding:10px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.47px;
+     text-align: left;
+
+}
+.custom-dropdown-item:hover{
+    background-color: #ddd;
+}
+.selected-speed{
+    color: #CE036A;
+}
+.list-thumbnail{
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    padding: 0px 6px;
+}
+
+/* Model Css */
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+}
+.model {
+    display:none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.model-content {
+    width: 650px;        
+    height: 664px;       
+    background-color: white;
+    border-radius: 18px; 
+    position: relative;
+    overflow: auto;    
+}
+
+.model-image-container {
+    position: relative;
+    height: 282px;          
+    border-radius: 18px 18px 0 0; 
+}
+
+#preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.verified-badge {
+    position: absolute;
+    top: 200px;
+    left: 19px;
+    background-color: rgba(255, 255, 255,0);
+    padding: 8px 10px;
+    border-radius: 12px;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    color: #fff;
+}
+
+.verified-badge img {
+    width: 20px;
+    height: 20px;
+}
+
+#preview-artist {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    z-index: 2;
+}
+
+#close-model {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#close-model img {
+    width: 20px;
+    height: 20px;
+}
+
+#previewDetails {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    color: black;
+}
+
+.preview-stats h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.preview-stats p {
+    font-size: 16px;
+    color: gray;
+}
+
+#preview-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: black;
+    max-height: 200px;
+}
+
+
+
